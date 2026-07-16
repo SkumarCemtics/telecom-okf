@@ -114,7 +114,7 @@ One record per:
 
 ## Related Metrics
 
-- ../references/metrics/volte_cssr.md
+- [volte_cssr](../references/metrics/volte_cssr.md)
 - ../references/metrics/volte_dcr.md
 - ../references/metrics/rrc_setup_sr.md
 - ../references/metrics/erab_setup_sr.md
