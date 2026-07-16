@@ -211,3 +211,31 @@ Primary:
 | voice_complaints | double precision | Voice service related complaints |
 | data_complaints | double precision | Data service related complaints |
 | outage_duration_min | double precision | Total outage duration in minutes |
+
+
+## Common Query Patterns
+
+```sql
+-- Identify circles with highest 5G session drops
+SELECT
+    circle_name,
+    AVG(nr_session_ps_drop_rate) AS avg_drop_rate
+FROM circle_kpi_5g
+GROUP BY circle_name
+ORDER BY avg_drop_rate DESC;
+
+-- Compare 5G accessibility performance
+SELECT
+    circle_name,
+    AVG(rasr) AS avg_rasr
+FROM circle_kpi_5g
+GROUP BY circle_name;
+
+-- Analyze outage impact by circle
+SELECT
+    circle_name,
+    SUM(outage_duration_min) AS outage_minutes
+FROM circle_kpi_5g
+GROUP BY circle_name
+ORDER BY outage_minutes DESC;
+```

@@ -187,3 +187,32 @@ Primary:
 | voice_complaints | double precision | Voice service related complaints |
 | data_complaints | double precision | Data service related complaints |
 | outage_duration_min | double precision | Total outage duration in minutes |
+
+
+## Common Query Patterns
+
+```sql
+-- Identify worst performing circles by VoLTE DCR
+SELECT
+    circle_name,
+    AVG(volte_dcr) AS avg_volte_dcr
+FROM circle_kpi_4g
+GROUP BY circle_name
+ORDER BY avg_volte_dcr DESC;
+
+-- Compare circle accessibility performance
+SELECT
+    circle_name,
+    AVG(volte_cssr) AS avg_volte_cssr,
+    AVG(rrc_setup_sr) AS avg_rrc_setup_sr
+FROM circle_kpi_4g
+GROUP BY circle_name;
+
+-- Analyze complaints by circle
+SELECT
+    circle_name,
+    SUM(total_complaints) AS total_complaints
+FROM circle_kpi_4g
+GROUP BY circle_name
+ORDER BY total_complaints DESC;
+```

@@ -175,3 +175,32 @@ Secondary:
 | tx | text | Transport or transmission related issue indicator |
 | recommendation_1 | text | Primary recommended corrective action |
 | recommendation_2 | text | Secondary recommended corrective action |
+
+
+## Common Query Patterns
+
+```sql
+-- Most common root causes
+SELECT
+    primary_rca,
+    COUNT(*) AS issue_count
+FROM rca
+GROUP BY*primary_rca
+ORDER BY issue_count D*SC;
+
+-- Analyze resolution time by RCA category
+SELECT
+    primary_rca,
+    AVG(days_to_resolve) AS avg_resolution_days
+FROM rca
+GROUP BY primary_rca
+ORDER BY avg_resolution_days DESC;
+
+-- Analyze issues by assigned team
+SELECT
+    assigned_team,
+    COUNT(*) AS total_issues
+FROM rca
+GROUP BY assigned_team
+ORDER BY total_issues DESC;
+```

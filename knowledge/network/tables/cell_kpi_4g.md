@@ -206,3 +206,36 @@ Secondary:
 | ps_packet_loss_rate_dl | double precision | Downlink Packet Loss Rate |
 | ps_packet_loss_rate_ul | double precision | Uplink Packet Loss Rate |
 | ping_pong_ho | double precision | Ping-Pong Handover Rate |
+
+## Common Query Patterns
+
+```sql
+-- Identify cells with highest VoLTE drop call rate
+SELECT
+    date,
+    circle_name,
+    cell_name,
+    volte_dcr
+FROM cell_kpi_4g
+ORDER BY volte_dcr DESC
+LIMIT 10;
+
+-- Analyze LTE accessibility by circle
+SELECT
+    circle_name,
+    AVG(volte_cssr) AS avg_volte_cssr,
+    AVG(rrc_setup_sr) AS avg_rrc_setup_sr,
+    AVG(erab_setup_sr) AS avg_erab_setup_sr
+FROM cell_kpi_4g
+GROUP BY circle_name
+ORDER BY avg_volte_cssr ASC;
+
+-- Compare throughput by vendor
+SELECT
+    vendor,
+    AVG(dl_user_throughput_mbps) AS avg_dl_throughput,
+    AVG(ul_user_throughput_mbps) AS avg_ul_throughput
+FROM cell_kpi_4g
+GROUP BY vendor
+ORDER BY avg_dl_throughput DESC;
+```

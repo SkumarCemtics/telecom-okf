@@ -212,3 +212,34 @@ Secondary:
 | initial_bler_in_pdsch | double precision | Initial BLER in PDSCH |
 | initial_bler_in_pusch | double precision | Initial BLER in PUSCH |
 | cell_technology | text | Technology type (5G NR) |
+
+## Common Query Patterns
+
+```sql
+-- Identify cells with highest 5G session drop rates
+SELECT
+    date,
+    circle_name,
+    cell_name,
+    nr_session_ps_drop_rate
+FROM cell_kpi_5g
+ORDER BY nr_session_ps_drop_rate DESC
+LIMIT 10;
+
+-- Analyze 5G accessibility by circle
+SELECT
+    circle_name,
+    AVG(rasr) AS avg_rasr,
+    AVG(reestablish_sr) AS avg_reestablish_sr
+FROM cell_kpi_5g
+GROUP BY circle_name;
+
+-- Compare 5G throughput by vendor
+SELECT
+    vendor,
+    AVG(dl_user_throughput_mbps) AS avg_dl_throughput,
+    AVG(ul_user_throughput_mbps) AS avg_ul_throughput
+FROM cell_kpi_5g
+GROUP BY vendor
+ORDER BY avg_dl_throughput DESC;
+```

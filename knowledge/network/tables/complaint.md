@@ -107,3 +107,32 @@ Secondary:
 | data_complaints | integer | Number of customer complaints related to mobile data services |
 | voice_complaints | integer | Number of customer complaints related to voice services |
 | cell_technology | text | Technology associated with the complaint (4G, 5G, etc.) |
+
+## Common Query Patterns
+
+```sql
+-- Identify cells with highest complaints
+SELECT
+    cell_name,
+    SUM(data_complaints + voice_complaints) AS total_complaints
+FROM complaint
+GROUP BY cell_name
+ORDER BY total_complaints DESC;
+
+-- Analyze complaints by circle
+SELECT
+    circle_name,
+    SUM(data_complaints) AS data_complaints,
+    SUM(voice_complaints) AS voice_complaints
+FROM complaint
+GROUP BY circle_name;
+
+-- Analyze complaint trend over time
+SELECT
+    date,
+    SUM(data_complaints) AS data_complaints,
+    SUM(voice_complaints) AS voice_complaints
+FROM complaint
+GROUP BY date
+ORDER BY date;
+```

@@ -118,3 +118,37 @@ Secondary:
 | outage_duration_min | double precision | Total outage duration in minutes |
 | outage_cause | text | Reported cause of the outage event |
 | cell_tech_1 | text | Additional technology classification associated with the outage |
+
+## Common Query Patterns
+
+```sql
+-- Identify outage events with the longest duration
+SELECT
+    date,
+    circle_name,
+    site_name,
+    cell_name,
+    outage_duration_min
+FROM outage
+ORDER BY outage_duration_min DESC
+LIMIT 10;
+
+-- Analyze outage duration by outage cause
+SELECT
+    outage_cause,
+    COUNT(*) AS outage_count,
+    SUM(o*tage_duration_min) AS total_outage*duration_min
+FROM outage
+GROUP BY *utage_cause
+ORDER BY total_outage_duration_min DESC;
+
+-- Compare outage impact by vendor and technology
+SELECT
+    vendor,
+    cell_technology,
+    COUNT(*) AS outage_count,
+    AVG(outage_duration_min) AS avg_outage_duration_min
+FROM outage
+GROUP BY vendor, cell_technology
+ORDER BY avg_outage_duration_min DESC;
+```

@@ -197,3 +197,32 @@ Secondary:
 | total_drop_calls_volte | double precision | Dropped VoLTE calls |
 | total_setup_failure_volte | double precision | VoLTE setup failures |
 | cell_technology | text | Technology type associated with the measurement |
+
+## Common Query Patterns
+
+```sql
+-- Identify cells with poor coverage
+SELECT
+    cell_name,
+    AVG(rsrp) AS avg_rsrp,
+    AVG(rsrq) AS avg_rsrq
+FROM coverage
+GROUP BY cell_name
+ORDER BY avg_rsrp ASC;
+
+-- Analyze handover performance
+SELECT
+    circle_name,
+    SUM(total_ho_attempts_success) AS ho_success,
+    SUM(total_ho_attempts_failure) AS ho_failure
+FROM coverage
+GROUP BY circle_name;
+
+-- Analyze VoLTE call drops
+SELECT
+    cell_name,
+    SUM(total_drop_calls_volte) AS volte_drops
+FROM coverage
+GROUP BY cell_name
+ORDER BY volte_drops DESC;
+```
