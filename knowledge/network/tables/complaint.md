@@ -55,16 +55,28 @@ One record per:
 
 ## Related Metrics
 
-- ../../references/metrics/data_complaints.md
-- ../../references/metrics/voice_complaints.md
-- ../../references/metrics/total_complaints.md
+- [data_complaints](../references/metrics/data_complaints.md)  
+  Total number of customer complaints related to data service issues such as low throughput, connectivity problems, or session failures.
+
+- [voice_complaints](../references/metrics/voice_complaints.md)  
+  Total number of customer complaints related to voice services, including call setup failures, poor call quality, and dropped calls.
+
+- [total_complaints](../references/metrics/total_complaints.md) 
+  Aggregate count of all customer complaints across voice, data, and other network service categories.
 
 ## Related Joins
 
-- ../../references/joins/complaint_coverage.md
-- ../../references/joins/complaint_outage.md
-- ../../references/joins/complaint_rca.md
-- ../../references/joins/customer_experience_analysis.md
+- [complaint_coverage](../references/joins/complaint_coverage.md)  
+  Correlates customer complaints with network coverage metrics to identify coverage-related service issues.
+
+- [complaint_outage](../references/joins/complaint_outage.md)  
+  Associates customer complaints with outage events to assess outage impact on customer experience.
+
+- [complaint_rca](../references/joins/complaint_rca.md)  
+  Supports root cause analysis by linking complaints with relevant network performance indicators and events.
+
+- [customer_experience_analysis](../references/joins/customer_experience_analysis.md)  
+  Combines customer feedback and network KPIs to provide a comprehensive view of customer experience and service quality.
 
 ## Related Tables
 

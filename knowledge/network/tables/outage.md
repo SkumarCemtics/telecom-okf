@@ -63,14 +63,21 @@ One record per:
 
 ## Related Metrics
 
-- ../../references/metrics/outage_duration_min.md
-- ../../references/metrics/service_availability.md
+- [outage_duration_min](../references/metrics/outage_duration_min.md)
+  Total duration of network outages measured in minutes, indicating the extent and impact of service disruptions.
 
+- [service_availability](../references/metrics/service_availability.md)
+  Measures the percentage of time that network services remain operational and accessible to users.
 ## Related Joins
 
-- ../../references/joins/outage_rca.md
-- ../../references/joins/complaint_outage.md
-- ../../references/joins/outage_impact_analysis.md
+- [outage_rca](../references/joins/outage_rca.md)
+  Supports root cause analysis of outage events by correlating outages with network alarms, performance degradations, and operational activities.
+
+- [complaint_outage](../references/joins/complaint_outage.md)
+  Associates customer complaints with outage events to evaluate the customer impact of service disruptions.
+
+- [outage_impact_analysis](../references/joins/outage_impact_analysis.md)
+  Provides insights into the operational and customer experience impact of outages by correlating outage events with network and service KPIs.
 
 ## Related Tables
 

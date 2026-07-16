@@ -115,19 +115,34 @@ One record per:
 
 ## Related Metrics
 
-- ../../references/metrics/rsrp.md
-- ../../references/metrics/rsrq.md
-- ../../references/metrics/handover_success_rate.md
-- ../../references/metrics/irat_success_rate.md
-- ../../references/metrics/srvcc_success_rate.md
-- ../../references/metrics/drop_call_rate.md
+- [rsrp](../references/metrics/rsrp.md) 
+  Reference Signal Received Power (RSRP). Measures the strength of the received LTE reference signal and is a key indicator of network coverage quality.
+
+- [rsrq](../referencess/metrics/rsrq.md)  
+  Reference Signal Received Quality (RSRQ). Measures signal quality by combining signal strength and interference levels, helping assess overall radio performance.
+
+- [handover_success_rate](../references/metrics/handover_success_rate.md) 
+  Measures the percentage of successful handovers between cells, ensuring service continuity for mobile users.
+
+- [srvcc_success_rate](../references/metrics/srvcc_success_rate.md) 
+  Single Radio Voice Call Continuity Success Rate. Measures the success rate of voice call transfers between LTE and legacy networks during mobility events.
+
+- [drop_call_rate](../references/metrics/drop_call_rate.md)  
+  Measures the percentage of active voice calls that are unexpectedly terminated before completion.
 
 ## Related Joins
 
-- ../../references/joins/coverage_4gkpi.md
-- ../../references/joins/coverage_5gkpi.md
-- ../../references/joins/complaint_coverage.md
-- ../../references/joins/cell_level_analysis.md
+- [coverage_4gkpi](../references/joins/coverage_4gkpi.md)  
+  Provides 4G coverage-related dimensions and KPI mappings for coverage performance analysis.
+
+- [coverage_5gkpi](../references/joins/coverage_5gkpi.md)  
+  Provides 5G coverage-related dimensions and KPI mappings for advanced coverage and mobility analysis.
+
+- [complaint_coverage](../references/joins/complaint_coverage.md)
+  Correlates customer complaints with coverage metrics to identify areas where poor radio conditions affect user experience.
+
+- [cell_level_analysis](../references/joins/cell_level_analysis.md)  
+  Enables detailed analysis of coverage, mobility, and performance KPIs at the individual cell level.
 
 ## Related Tables
 
