@@ -1,5 +1,5 @@
 ---
-title: Tables
+title: Tables Index
 type: Index
 ---
 
@@ -8,10 +8,10 @@ type: Index
 - [cell_kpi_4g](cell_kpi_4g.md)
   - Cell-level LTE (4G) KPI data covering accessibility, retainability, mobility, throughput, and VoLTE performance.
 
-- [cell_ki_5g](cell_ki_5g.md)
+- [cell_kpi_5g](cell_ki_5g.md)
   - Cell-level NR (5G) KPI data covering accessibility, session stability, throughput, and radio quality.
 
-- [circle_ki_4g](circle_ki_4g.md)
+- [circle_kpi_4g](circle_ki_4g.md)
   - Aggregated LTE (4G) KPI performance metrics at telecom circle level.
 
 - [circle_kpi_5g](circle_kpi_5g.md)
