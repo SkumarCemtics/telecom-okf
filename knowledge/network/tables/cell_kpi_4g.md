@@ -114,21 +114,31 @@ One record per:
 
 ## Related Metrics
 
-- [volte_cssr](../references/metrics/volte_cssr.md)
-- ../references/metrics/volte_dcr.md
-- ../references/metrics/rrc_setup_sr.md
-- ../references/metrics/erab_setup_sr.md
-- ../references/metrics/inter_hosr.md
-- ../references/metrics/intra_hosr.md
-- ../references/metrics/data_drop_call_rate.md
-- ../references/metrics/dl_user_throughput_mbps.md
-- ../references/metrics/ul_user_throughput_mbps.md
-- ../references/metrics/avg_cqi.md
+- [volte_cssr](../references/metrics/volte_cssr.md) - Measures Vo Success Rate used to evaluate LTE accessibility and successful VoLTE call establishment.
+
+- [volte_dcr](../references/metrics/volte_dcr.md) - Measures VoLTE Drop Call Rate used to evaluate VoLTE retainability and call continuity.
+
+- [rrc_setup_sr](../references/metrics/rrc_setup_sr.md) - Measures Radio Resource Control Setup Success Rate used to assess LTE access network performance.
+
+- [erab_setup_sr](../references/metrics/erab_setup_sr.md) - Measures E-RAB Setup Success Rate used to measure successful bearer establishment for LTE data and voice services.
+
+- [inter_hosr](../references/metrics/inter_hosr.md) - Measures Inter-Frequency Handover Success Rate used to assess mobility performance across frequency layers.
+
+- [intra_hosr](../references/metrics/intra_hosr.md) - Measure Intra-Frequency Handover Success Rate used to assess mobility performance within the same frequency layer.
+
+- [data_drop_call_rate](../references/metrics/data_drop_call_rate.md) - Measures sessions that terminate unexpectedly.
+
+- [dl_user_throughput_mbps](../references/metrics/dl_user_throughput_mbps.md) - Measures average downlink throughput experienced by LTE users.
+
+- [ul_user_throughput_mbps](../references/metrics/dl_user_throughput_mbps.md) - Measures average uplink throughput experienced by LTE users.
+
+- [avg_cqi](../references/metrics/avg_cqi.md) - Measures average Channel Quality Indicator used to assess radio signal quality and user experience.
 
 ## Related Joins
 
-- ../references/joins/coverage_4gkpi.md
-- ../references/joins/cell_level_analysis.md
+- [coverage_4gkpi](../references/joins/coverage_4gkpi.md) - LTE KPI performance with coverage and radio quality measurements.
+
+- [cell_level_analysis](../references/joins/cell_level_analysis.md) - Enables cell-level analysis across KPI, coverage, complaint, and service quality datasets.
 
 ## Related Tables
 

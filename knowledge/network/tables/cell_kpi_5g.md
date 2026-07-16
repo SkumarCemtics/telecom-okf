@@ -122,19 +122,37 @@ One record per:
 
 ## Related Metrics
 
-- ../../references/metrics/rasr.md
-- ../../references/metrics/reestablish_sr.md
-- ../../references/metrics/nr_session_ps_drop_rate.md
-- ../../references/metrics/dl_user_throughput_mbps.md
-- ../../references/metrics/ul_user_throughput_mbps.md
-- ../../references/metrics/avg_cqi.md
-- ../../references/metrics/spectral_efficiency_dl.md
-- ../../references/metrics/spectral_efficiency_ul.md
+- [rasr](../references/metrics/rasr.md)  
+  Radio Access Success Rate. Measures the percentage of successful radio access attempts, indicating network accessibility and connection setup performance.
+
+- [reestablish_sr](../references/metrics/reestablish_sr.md)  
+  Re-establishment Success Rate. Tracks the success rate of connection re-establishment procedures after radio link failures.
+
+- [nr_session_ps_drop_rate](../references/metrics/nr_session_ps_drop_rate.md)
+  Measures the percentage of packet-switched (PS) sessions that are unexpectedly dropped in the 5G NR network.
+
+- [dl_user_throughput_mbps](../references/metrics/dl_user_throughput_mbps.md)
+  Average downlink data throughput experienced by users, reflecting network download performance in MBPS.
+
+- [ul_user_throughput_mbps](../references/metrics/ul_user_throughput_mbps.md) 
+  Average uplink data throughput experienced by users, reflecting network upload performance in MBPS.
+
+- [avg_cqi](../references/metrics/avg_cqi.md)  
+  Average Channel Quality Indicator reported by users, representing overall radio channel conditions.
+
+- [spectral_efficiency_dl](../references/metrics/spectral_efficiency_dl.md) 
+  Measures how efficiently radio spectrum is utilized for downlink data transmission.
+
+- [spectral_efficiency_ul](../references/metrics/spectral_efficiency_ul.md) 
+  Measures how efficiently radio spectrum is utilized for uplink data transmission.
 
 ## Related Joins
 
-- ../../references/joins/coverage_5gkpi.md
-- ../../references/joins/cell_level_analysis.md
+- [coverage_5gkpi](../references/joins/coverage_5gkpi.md) 
+  Provides 5G coverage-related dimensions and KPI mappings used for coverage analysis.
+
+- [cell_level_analysis](../references/joins/cell_level_analysis.md)
+  Enables correlation of KPIs with cell-level attributes and dimensions for detailed network performance investigations.
 
 ## Related Tables
 
