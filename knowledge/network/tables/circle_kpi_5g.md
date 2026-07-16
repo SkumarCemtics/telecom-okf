@@ -207,10 +207,7 @@ Primary:
 | pucch_rssi | double precision | PUCCH Received Signal Strength Indicator |
 | initial_bler_in_pdsch | double precision | Initial BLER in PDSCH |
 | initial_bler_in_pusch | double precision | Initial BLER in PUSCH |
-| total_complaints | double precision | Total customer complaints reported in the circle |
-| voice_complaints | double precision | Voice service related complaints |
-| data_complaints | double precision | Data service related complaints |
-| outage_duration_min | double precision | Total outage duration in minutes |
+
 
 
 ## Common Query Patterns

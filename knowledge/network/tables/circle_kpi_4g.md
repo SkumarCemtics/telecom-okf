@@ -118,24 +118,52 @@ One record per:
 
 ## Related Metrics
 
-- ../../references/metrics/volte_cssr.md
-- ../../references/metrics/volte_dcr.md
-- ../../references/metrics/rrc_setup_sr.md
-- ../../references/metrics/erab_setup_sr.md
-- ../../references/metrics/inter_hosr.md
-- ../../references/metrics/intra_hosr.md
-- ../../references/metrics/data_drop_call_rate.md
-- ../../references/metrics/dl_user_throughput_mbps.md
-- ../../references/metrics/ul_user_throughput_mbps.md
-- ../../references/metrics/avg_cqi.md
-- ../../references/metrics/total_complaints.md
-- ../../references/metrics/outage_duration_min.md
+- [volte_cssr](../references/metrics/volte_cssr.md)
+  Call Setup Success Rate. Measures the percentage of VoLTE call attempts that are successfully established.
+
+- [volte_dcr](../references/metrics/volte_dcr.md)  
+  VoLTE Drop Call Rate. Measures the percentage of VoLTE calls that are unexpectedly disconnected after successful setup.
+
+- [rrc_setup_sr](../references/metrics/rrc_setup_sr.md) 
+  RRC Setup Success Rate. Indicates the success rate of establishing Radio Resource Control (RRC) connections.
+
+- [erab_setup_sr](../references/metrics/erab_setup_sr.md)  
+  E-RAB Setup Success Rate. Measures the success rate of establishing E-UTRAN Radio Access Bearers for user data sessions.
+
+- [inter_hosr](../references/metrics/inter_hosr.md)  
+  Inter-cell Handover Success Rate. Tracks the success rate of handovers between different cells.
+
+- [intra_hosr](../references/metrics/intra_hosr.md)  
+  Intra-cell Handover Success Rate. Tracks the success rate of handovers within the same cell or sector.
+
+- [data_drop_call_rate](../references/metrics/data_drop_call_rate.md)  
+  Measures the percentage of active data sessions that are unexpectedly terminated.
+
+- [dl_user_throughput_mbps](../references/metrics/dl_user_throughput_mbps.md)  
+  Average downlink data throughput experienced by users, reflecting network download performance.
+
+- [ul_user_throughput_mbps](../references/metrics/ul_user_throughput_mbps.md)
+  Average uplink data throughput experienced by users, reflecting network upload performance.
+
+- [avg_cqi](../references/metrics/avg_cqi.md)
+  Average Channel Quality Indicator reported by users, representing overall radio conditions and signal quality.
+
+- [total_complaints](../references/metrics/total_complaints.md)
+  Total number of customer complaints associated with the analyzed network area or period.
+
+- [outage_duration_min](../references/metrics/outage_duration_min.md)  
+  Total duration of network outages measured in minutes, indicating service availability impact.
 
 ## Related Joins
 
-- ../../references/joins/circle_level_analysis.md
-- ../../references/joins/complaint_correlation.md
-- ../../references/joins/outage_impact_analysis.md
+- [circle_level_analysis](../references/joins/circle_level_analysis.md)
+  Provides circle-level dimensions and aggregations for regional network performance analysis.
+
+- [complaint_correlation](../references/joins/complaint_correlation.md)
+  Enables correlation of network KPIs with customer complaints to identify service quality issues.
+
+- [outage_impact_analysis](../references/joins/outage_impact_analysis.md)  
+  Supports analysis of outage events and their impact on network performance and customer experience.
 
 ## Related Tables
 
@@ -183,10 +211,6 @@ Primary:
 | irat_hosr | double precision | Inter-RAT Handover Success Rate |
 | volte_srvcc | double precision | Successful SRVCC Events |
 | volte_prach_sr | double precision | VoLTE PRACH Success Rate |
-| total_complaints | double precision | Total customer complaints reported in the circle |
-| voice_complaints | double precision | Voice service related complaints |
-| data_complaints | double precision | Data service related complaints |
-| outage_duration_min | double precision | Total outage duration in minutes |
 
 
 ## Common Query Patterns
