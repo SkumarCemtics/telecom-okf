@@ -114,21 +114,21 @@ One record per:
 
 ## Related Metrics
 
-- ../../references/metrics/volte_cssr.md
-- ../../references/metrics/volte_dcr.md
-- ../../references/metrics/rrc_setup_sr.md
-- ../../references/metrics/erab_setup_sr.md
-- ../../references/metrics/inter_hosr.md
-- ../../references/metrics/intra_hosr.md
-- ../../references/metrics/data_drop_call_rate.md
-- ../../references/metrics/dl_user_throughput_mbps.md
-- ../../references/metrics/ul_user_throughput_mbps.md
-- ../../references/metrics/avg_cqi.md
+- ../references/metrics/volte_cssr.md
+- ../references/metrics/volte_dcr.md
+- ../references/metrics/rrc_setup_sr.md
+- ../references/metrics/erab_setup_sr.md
+- ../references/metrics/inter_hosr.md
+- ../references/metrics/intra_hosr.md
+- ../references/metrics/data_drop_call_rate.md
+- ../references/metrics/dl_user_throughput_mbps.md
+- ../references/metrics/ul_user_throughput_mbps.md
+- ../references/metrics/avg_cqi.md
 
 ## Related Joins
 
-- ../../references/joins/coverage_4gkpi.md
-- ../../references/joins/cell_level_analysis.md
+- ../references/joins/coverage_4gkpi.md
+- ../references/joins/cell_level_analysis.md
 
 ## Related Tables
 
