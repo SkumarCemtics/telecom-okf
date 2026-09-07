@@ -1,6 +1,11 @@
 ---
-description: Cell-level LTE (4G) network performance KPI dataset used for accessibility, retainability, mobility, throughput, capacity, and VoLTE service analysis.
+title: cell_kpi_4g
+type: PostgreSQL Table
 resource: cell_kpi_4g
+description: Cell-level LTE (4G) network performance KPI dataset used for accessibility, retainability, mobility, throughput, capacity, and VoLTE service analysis.
+database: network
+technology: 4G
+
 tags:
 - telecom
 - 4g
@@ -8,8 +13,7 @@ tags:
 - performance
 - volte
 - kpi
-title: cell_kpi_4g
-type: PostgreSQL Table
+
 ---
 
 ## Overview
@@ -30,7 +34,7 @@ Primary use cases:
 - Customer complaint correlation
 - Root cause analysis
 
-## Grain
+## Granularity
 
 One record per:
 
@@ -114,7 +118,7 @@ One record per:
 
 ## Related Metrics
 
-- [volte_cssr](../references/metrics/volte_cssr.md) - Measures Vo Success Rate used to evaluate LTE accessibility and successful VoLTE call establishment.
+- [volte_cssr](../references/metrics/volte_cssr.md) - Measures VoLTE Success Rate used to evaluate LTE accessibility and successful VoLTE call establishment.
 
 - [volte_dcr](../references/metrics/volte_dcr.md) - Measures VoLTE Drop Call Rate used to evaluate VoLTE retainability and call continuity.
 

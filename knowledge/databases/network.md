@@ -1,193 +1,223 @@
 ---
-
 title: Network Database
 type: PostgreSQL database
-description: Network analytics database containing radio network KPIs, coverage, outages, complaints, and root cause analysis information.
+description: Telecom radio network database for analyzing cells, sites, circles, 4G/LTE and 5G/NR radio performance, network KPIs, coverage, outages, network-related complaints, and root cause analysis. This database focuses on network infrastructure and network performance rather than subscriber or customer-profile information.
+
 tags:
+  - network
+  - radio network
+  - cell
+  - site
+  - circle
+  - 4g
+  - lte
+  - 5g
+  - nr
+  - network kpi
+  - radio kpi
+  - coverage
+  - throughput
+  - utilization
+  - latency
+  - outage
+  - network complaint
+  - rca
+  - root cause
 
-- network
-- telecom
-- 4g
-- 5g
-- radio
-- kpi
-- coverage
-- outage
-- rca
+purpose: >
+  The Network database contains radio access network (RAN) and network
+  infrastructure data used to monitor, measure, and troubleshoot network
+  performance. It is the primary database for questions about cells,
+  sites, radio technologies, telecom circles, network KPIs, coverage,
+  traffic, capacity, utilization, outages, and network performance
+  across 4G/LTE and 5G/NR.
 
----
+business_scope:
+  - cell and site performance
+  - radio network performance
+  - 4G/LTE performance
+  - 5G/NR performance
+  - circle-level network performance
+  - network traffic and data volume
+  - user throughput
+  - network capacity and congestion
+  - radio resource utilization
+  - spectrum and bandwidth utilization
+  - network accessibility
+  - network retainability
+  - network availability
+  - mobility and handover performance
+  - coverage and radio signal quality
+  - packet loss and BLER
+  - latency
+  - VoLTE network performance
+  - network outages
+  - network-related complaints
+  - network fault analysis
+  - root cause analysis
+  - network optimization
+  - vendor performance
+  - frequency and bandwidth analysis
 
-# Network Database
+primary_business_entities:
+  - cell
+  - site
+  - circle
+  - radio network
+  - network KPI
+  - coverage
+  - outage
+  - network complaint
+  - root cause analysis
+  - network vendor
+  - technology
+  - frequency
+  - bandwidth
 
-## Purpose
+main_datasets:
+  - cell KPI 4G
+  - cell KPI 5G
+  - circle KPI 4G
+  - circle KPI 5G
+  - coverage
+  - outage
+  - complaint
+  - root cause analysis
 
-The Network database contains network-centric information used for radio network monitoring, performance management, capacity planning, coverage analysis, fault management, and root cause analysis. The primary entities are cells, sites, and telecom circles, with data describing network performance, coverage, service quality, outages, complaints, and operational KPIs across 4G and 5G networks.
+network_kpi_concepts:
+  - DL user throughput
+  - UL user throughput
+  - download speed
+  - upload speed
+  - data volume
+  - DL data volume
+  - UL data volume
+  - traffic
+  - user load
+  - RSRP
+  - RSRQ
+  - SINR
+  - RSSI
+  - CQI
+  - radio resource utilization
+  - DL resource utilization
+  - UL resource utilization
+  - RB utilization
+  - spectrum utilization
+  - capacity
+  - congestion
+  - latency
+  - packet loss
+  - BLER
+  - accessibility
+  - retainability
+  - availability
+  - call drop
+  - drop rate
+  - handover success
+  - mobility
+  - VoLTE performance
 
-## Business Scope
+network_events:
+  - cell outage
+  - site outage
+  - network outage
+  - network fault
+  - network alarm
+  - degraded network performance
+  - poor coverage
+  - poor signal quality
+  - high latency
+  - high packet loss
+  - low throughput
+  - high utilization
+  - congestion
+  - call drops
+  - handover failures
+  - network-related complaints
+  - root cause
+  - network optimization
 
-This database supports analysis related to:
+common_query_concepts:
+  - network
+  - cell
+  - cells
+  - site
+  - sites
+  - tower
+  - sector
+  - circle
+  - coverage
+  - radio
+  - RAN
+  - 4G
+  - LTE
+  - 5G
+  - NR
+  - VoLTE
+  - KPI
+  - performance
+  - throughput
+  - download speed
+  - upload speed
+  - data volume
+  - traffic
+  - utilization
+  - capacity
+  - congestion
+  - accessibility
+  - retainability
+  - availability
+  - latency
+  - packet loss
+  - BLER
+  - RSRP
+  - RSRQ
+  - SINR
+  - RSSI
+  - CQI
+  - PRACH
+  - PUCCH
+  - PUSCH
+  - outage
+  - alarm
+  - fault
+  - call drop
+  - drop rate
+  - handover
+  - mobility
+  - RCA
+  - root cause
+  - optimization
+  - vendor
+  - frequency
+  - bandwidth
 
-- Cell performance monitoring
-- Circle-level network performance
-- 4G and 5G radio KPIs
-- Coverage analysis
-- Signal strength and signal quality
-- Capacity planning
-- Traffic analysis
-- User throughput
-- Accessibility KPIs
-- Retainability KPIs
-- Mobility and handover performance
-- VoLTE performance
-- Packet loss and BLER analysis
-- Latency analysis
-- Spectrum utilization
-- Radio resource utilization
-- Network availability
-- Vendor performance comparison
-- Network outage monitoring
-- Customer complaint analysis
-- Root cause analysis (RCA)
-- Network optimization
+database_boundary: >
+  The Network database is focused on network infrastructure, radio
+  measurements, network performance, and network events. It should be
+  preferred when a query concerns cells, sites, radio networks, 4G or 5G
+  performance, throughput, latency, utilization, coverage, signal quality,
+  outages, network faults, network-related complaints, or root cause
+  analysis. It should not be selected merely because a query contains
+  generic terms such as customer, service, complaint, issue, or data
+  unless those concepts are connected to network performance or network
+  events.
 
-## Primary Business Entities
+primary_dimensions:
+  - date
+  - circle name
+  - site name
+  - cell name
+  - technology
+  - frequency
+  - bandwidth
+  - vendor
+  - city
+  - pincode
 
-- Cell
-- Site
-- Circle
-- Radio Network
-- Coverage
-- Network KPI
-- Outage
-- Complaint
-- Root Cause Analysis
-- Vendor
-
-## Main Datasets
-
-- Cell KPI 4G
-- Cell KPI 5G
-- Circle KPI 4G
-- Circle KPI 5G
-- Coverage
-- Complaint
-- Outage
-- Root Cause Analysis (RCA)
-
-## Typical Questions
-
-This database can answer questions such as:
-
-- Which cells have poor throughput?
-- Which circles have the highest traffic?
-- Which cells have poor RSRP, RSRQ, SINR, or CQI?
-- Which sites have the highest user load?
-- Which cells have high packet loss or BLER?
-- Which circles have poor accessibility or retainability KPIs?
-- Which sites have frequent outages?
-- Which vendors have the best or worst network performance?
-- Which cells require optimization?
-- Which cells have poor VoLTE performance?
-- Which areas have poor coverage?
-- Which circles have the highest complaints?
-- What is the root cause of a network issue?
-- Which cells have the highest latency?
-- Compare 4G and 5G network performance.
-- Which locations have the highest call drop rate?
-- Which cells have poor handover success rates?
-
-## Common Query Concepts
-
-This database is relevant when a query refers to:
-
-- network
-- cell
-- site
-- sector
-- tower
-- circle
-- city
-- coverage
-- radio
-- 4G
-- LTE
-- 5G
-- NR
-- KPI
-- performance
-- throughput
-- traffic
-- data volume
-- user throughput
-- utilization
-- capacity
-- congestion
-- accessibility
-- retainability
-- availability
-- latency
-- packet loss
-- BLER
-- RSRP
-- RSRQ
-- SINR
-- RSSI
-- CQI
-- PRACH
-- PUCCH
-- PUSCH
-- VoLTE
-- call drop
-- drop rate
-- CSSR
-- HOSR
-- handover
-- mobility
-- outage
-- alarm
-- complaint
-- RCA
-- root cause
-- optimization
-- vendor
-- frequency
-- bandwidth
-
-## Primary Keys
-
-The database is primarily organized around:
-
-- Date
-- Cell Name
-- Site Name
-- Circle Name
-- Technology
-
-## Relationships
-
-Network datasets are correlated using shared identifiers including:
-
-- Cell Name
-- Site Name
-- Circle Name
-- Date
-- Technology
-
-These relationships enable end-to-end analysis across network KPIs, coverage, outages, complaints, and RCA information.
-
-## Not Intended For
-
-This database is not intended for:
-
-- Customer profiling
-- Subscriber demographics
-- Customer behavior analysis
-- Customer experience management (CEM)
-- Churn prediction
-- Customer segmentation
-- Recharge analysis
-- ARPU analysis
-- Device ownership
-- Customer revenue analysis
-
-Those use cases belong to the **Customer Database**.
+database_identity: >
+  Network means radio network, cells, sites, 4G/5G, network KPIs,
+  coverage, outages, network performance, network faults, and network
+  root cause analysis.
+  
